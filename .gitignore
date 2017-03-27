@@ -1,0 +1,8 @@
+Tera.Realm/bin/
+Tera.WorldServer/bin/
+Tera.Libs/obj/
+Tera.ORM/obj/
+Tera.Realm/obj/
+Tera.WorldServer/obj/
+Tera.Realm/Settings.ini
+Tera.WorldServer/Settings.ini

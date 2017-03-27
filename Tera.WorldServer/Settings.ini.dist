@@ -1,0 +1,54 @@
+[World]
+Host = 192.168.0.40
+Port = 5555
+MaxPacketLengh = 2048
+Key = jiva
+ID = 1
+StartLevel = 1
+KamasStart = 10000000
+StartMap = 10276
+StartCell = 314
+AllZaap = true
+GuildMaxLevel = 100
+onLogged = <b>Bienvenue sur Tera Serveur . Tapez .help pour la listes des commandes ou .boutique pour explorer la boutique</b>
+
+[Kolizeum]
+Enabled = true
+CheckInterval = 3000
+MemberPerTeam = 3
+WinItem = 6885
+
+[Extra]
+ElbustCore = true
+
+[Limit]
+Pa = 12
+Pm = 6
+
+[NpcShop]
+Use = true
+Cost = 150
+FmCost = 0
+
+[Rate]
+Pvm = 1
+Pvp = 1
+Kamas = 1
+Drop = 1
+
+[Account]
+MaxPlayer = 5
+
+[Inter]
+Host = 127.0.0.1
+Port = 666
+
+[Database]
+Host = 127.0.0.1
+Username = root
+Password =
+Name = tera_world
+rName = tera
+
+[Logging]
+Debug = true

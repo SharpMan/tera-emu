@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{530DDF25-897D-40AA-B9E7-26C549688651}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tera.WorldServer</RootNamespace>
+    <AssemblyName>Tera.WorldServer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jep">
+      <HintPath>..\..\Jep.dll</HintPath>
+    </Reference>
+    <Reference Include="Jint, Version=0.9.2.0, Culture=neutral, PublicKeyToken=973cde3f1cafed03, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Tera.Libs\Jint.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Tera.Realm\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SilverSock">
+      <HintPath>..\Tera.Realm\bin\Debug\SilverSock.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\ConstantsCache.cs" />
+    <Compile Include="Database\DatabaseCache.cs" />
+    <Compile Include="Database\DatabaseManager.cs" />
+    <Compile Include="Database\Models\AccountDataModel.cs" />
+    <Compile Include="Database\Models\AccountModel.cs" />
+    <Compile Include="Database\Models\AccountTicket.cs" />
+    <Compile Include="Database\Models\AreaModel.cs" />
+    <Compile Include="Database\Models\AreaSubModel.cs" />
+    <Compile Include="Database\Models\AreaSuper.cs" />
+    <Compile Include="Database\Models\BidHouseItem.cs" />
+    <Compile Include="Database\Models\BidHouseModel.cs" />
+    <Compile Include="Database\Models\BreedModel.cs" />
+    <Compile Include="Database\Models\CharacterGuildModel.cs" />
+    <Compile Include="Database\Models\CharacterModel.cs" />
+    <Compile Include="Database\Models\DropModel.cs" />
+    <Compile Include="Database\Models\ExpFloorModel.cs" />
+    <Compile Include="Database\Models\GuildModel.cs" />
+    <Compile Include="Database\Models\InventoryItemModel.cs" />
+    <Compile Include="Database\Models\IObjectTemplateModel.cs" />
+    <Compile Include="Database\Models\ItemLoot.cs" />
+    <Compile Include="Database\Models\ItemSetModel.cs" />
+    <Compile Include="Database\Models\ItemTemplateModel.cs" />
+    <Compile Include="Database\Models\MapModel.cs" />
+    <Compile Include="Database\Models\MonsterLevel.cs" />
+    <Compile Include="Database\Models\MonsterModel.cs" />
+    <Compile Include="Database\Models\MountModel.cs" />
+    <Compile Include="Database\Models\MountParkModel.cs" />
+    <Compile Include="Database\Models\NpcQuestionModel.cs" />
+    <Compile Include="Database\Models\NpcReplyModel.cs" />
+    <Compile Include="Database\Models\NpcTemplateModel.cs" />
+    <Compile Include="Database\Models\PrismeModel.cs" />
+    <Compile Include="Database\Models\ShopNpc.cs" />
+    <Compile Include="Database\Models\SpeakingModel.cs" />
+    <Compile Include="Database\Models\SpellModel.cs" />
+    <Compile Include="Database\Models\TaxCollectorModel.cs" />
+    <Compile Include="Database\Tables\AccountDataTable.cs" />
+    <Compile Include="Database\Tables\AccountTable.cs" />
+    <Compile Include="Database\Tables\AreaSubTable.cs" />
+    <Compile Include="Database\Tables\AreaTable.cs" />
+    <Compile Include="Database\Tables\BidHouseTable.cs" />
+    <Compile Include="Database\Tables\BreedTable.cs" />
+    <Compile Include="Database\Tables\CellActionTable.cs" />
+    <Compile Include="Database\Tables\CharactersGuildTable.cs" />
+    <Compile Include="Database\Tables\CharacterTable.cs" />
+    <Compile Include="Database\Tables\DropTable.cs" />
+    <Compile Include="Database\Tables\ExpFloorTable.cs" />
+    <Compile Include="Database\Tables\GuildTable.cs" />
+    <Compile Include="Database\Tables\InventoryItemTable.cs" />
+    <Compile Include="Database\Tables\IObjectTemplateTable.cs" />
+    <Compile Include="Database\Tables\ItemSetTable.cs" />
+    <Compile Include="Database\Tables\ItemTemplateTable.cs" />
+    <Compile Include="Database\Tables\MapTable.cs" />
+    <Compile Include="Database\Tables\MobGroupFixTable.cs" />
+    <Compile Include="Database\Tables\MonsterTable.cs" />
+    <Compile Include="Database\Tables\MountParkTable.cs" />
+    <Compile Include="Database\Tables\MountTable.cs" />
+    <Compile Include="Database\Tables\PrismeTable.cs" />
+    <Compile Include="Database\Tables\ShopNpcTable.cs" />
+    <Compile Include="Database\Tables\SpeakingTable.cs" />
+    <Compile Include="Database\Tables\StaticMountTable.cs" />
+    <Compile Include="Database\Tables\NpcQuestionTable.cs" />
+    <Compile Include="Database\Tables\NpcReplyTable.cs" />
+    <Compile Include="Database\Tables\NpcTemplateTable.cs" />
+    <Compile Include="Database\Tables\SpellTable.cs" />
+    <Compile Include="Database\Tables\TaxCollectorTable.cs" />
+    <Compile Include="Database\Tables\TitleTable.cs" />
+    <Compile Include="Database\Tables\ZaapiTable.cs" />
+    <Compile Include="Database\Tables\ZaapTable.cs" />
+    <Compile Include="Handlers\AlignmentHandler.cs" />
+    <Compile Include="Handlers\AuthHandler.cs" />
+    <Compile Include="Handlers\BasicHandler.cs" />
+    <Compile Include="Handlers\CharacterHandler.cs" />
+    <Compile Include="Handlers\CharacterScreenHandler.cs" />
+    <Compile Include="Handlers\CharacterSelectionHandler.cs" />
+    <Compile Include="Handlers\ConquestHandler.cs" />
+    <Compile Include="Handlers\ConsoleHandler.cs" />
+    <Compile Include="Handlers\DialogHandler.cs" />
+    <Compile Include="Handlers\EnnemyHandler.cs" />
+    <Compile Include="Handlers\EnvironmentHandler.cs" />
+    <Compile Include="Handlers\ExchangeHandler.cs" />
+    <Compile Include="Handlers\FightHandler.cs" />
+    <Compile Include="Handlers\FriendHandler.cs" />
+    <Compile Include="Handlers\GameActionHandler.cs" />
+    <Compile Include="Handlers\GameCreateHandler.cs" />
+    <Compile Include="Handlers\GameHandler.cs" />
+    <Compile Include="Handlers\GameInformationHandler.cs" />
+    <Compile Include="Handlers\GuildHandler.cs" />
+    <Compile Include="Handlers\MountParkHandler.cs" />
+    <Compile Include="Handlers\ObjectHandler.cs" />
+    <Compile Include="Handlers\PacketProcessor.cs" />
+    <Compile Include="Handlers\PartyHandler.cs" />
+    <Compile Include="Handlers\SpellHandler.cs" />
+    <Compile Include="Handlers\WayPointHandler.cs" />
+    <Compile Include="Network\BaseClient.cs" />
+    <Compile Include="Network\InterClient.cs" />
+    <Compile Include="Network\IPrintWriterEncrypted.cs" />
+    <Compile Include="Network\WorldClient.cs" />
+    <Compile Include="Network\WorldServer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CachedBuffer.cs" />
+    <Compile Include="Utils\Settings.cs" />
+    <Compile Include="Utils\StaticData.cs" />
+    <Compile Include="World\Actions\ActionModel.cs" />
+    <Compile Include="World\Actions\GuildAction.cs" />
+    <Compile Include="World\Actions\MiniGameAction.cs" />
+    <Compile Include="World\Actions\NpcAction.cs" />
+    <Compile Include="World\Actions\PlayerAction.cs" />
+    <Compile Include="World\BidHouse\Categorie.cs" />
+    <Compile Include="World\BidHouse\Line.cs" />
+    <Compile Include="World\BidHouse\Model.cs" />
+    <Compile Include="World\Challenges\Abnegation.cs" />
+    <Compile Include="World\Challenges\Anachorete.cs" />
+    <Compile Include="World\Challenges\Challenge.cs" />
+    <Compile Include="World\Challenges\ChallengeHandler.cs" />
+    <Compile Include="World\Challenges\Circulez.cs" />
+    <Compile Include="World\Challenges\Collant.cs" />
+    <Compile Include="World\Challenges\DesigneVolontaire.cs" />
+    <Compile Include="World\Challenges\Econome.cs" />
+    <Compile Include="World\Challenges\Hardi.cs" />
+    <Compile Include="World\Challenges\PerduDeVue.cs" />
+    <Compile Include="World\Challenges\Petulant.cs" />
+    <Compile Include="World\Challenges\Statue.cs" />
+    <Compile Include="World\Challenges\Sursis.cs" />
+    <Compile Include="World\Challenges\Survivant.cs" />
+    <Compile Include="World\Challenges\Versatile.cs" />
+    <Compile Include="World\Challenges\Zombie.cs" />
+    <Compile Include="World\Character\BankHelper.cs" />
+    <Compile Include="World\Challenges\Barbare.cs" />
+    <Compile Include="World\Character\BreedFloor.cs" />
+    <Compile Include="World\Character\CharacterInventory.cs" />
+    <Compile Include="World\Character\GenericEffect.cs" />
+    <Compile Include="World\Character\GenericStats.cs" />
+    <Compile Include="World\Character\Party.cs" />
+    <Compile Include="World\Character\RandomJet.cs" />
+    <Compile Include="World\Character\Sorter\PersonnageLevelSorter.cs" />
+    <Compile Include="World\Character\Sorter\PlayersPartySorter.cs" />
+    <Compile Include="World\Character\SpellBook.cs" />
+    <Compile Include="World\Character\WeaponEffect.cs" />
+    <Compile Include="World\Chats\ChatChannel.cs" />
+    <Compile Include="World\Chats\ChatController.cs" />
+    <Compile Include="World\Commands\Admin\AdminCommand.cs" />
+    <Compile Include="World\Commands\Admin\AdminCommandManager.cs" />
+    <Compile Include="World\Commands\Admin\Team\AddNpcCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\AllCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\DoCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\HonorCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\ItemCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\LearnSpellCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\LevelCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\RebootCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\ReloadCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\SpawnFixCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\TeleportCommand.cs" />
+    <Compile Include="World\Commands\Admin\Team\TitleComamnd.cs" />
+    <Compile Include="World\Commands\Admin\Team\WorldSaveCommand.cs" />
+    <Compile Include="World\Commands\CommandParameters.cs" />
+    <Compile Include="World\Commands\Player\PlayerCommand.cs" />
+    <Compile Include="World\Commands\Player\PlayerCommandManager.cs" />
+    <Compile Include="World\Commands\Player\Team\FmCacCommand.cs" />
+    <Compile Include="World\Commands\Player\Team\FmCommand.cs" />
+    <Compile Include="World\Commands\Player\Team\ItemCommand.cs" />
+    <Compile Include="World\Commands\Player\Team\KoliCommand.cs" />
+    <Compile Include="World\Commands\Player\Team\PointsCommand.cs" />
+    <Compile Include="World\Commands\Player\Team\TitleCommand.cs" />
+    <Compile Include="World\Controllers\ConditionParser.cs" />
+    <Compile Include="World\Controllers\TicketController.cs" />
+    <Compile Include="World\Events\IWorldEventObserver.cs" />
+    <Compile Include="World\Exchanges\Exchanges.cs" />
+    <Compile Include="World\Exchanges\MarketBuyExchange.cs" />
+    <Compile Include="World\Exchanges\MarketSellExchange.cs" />
+    <Compile Include="World\Exchanges\MountExchange.cs" />
+    <Compile Include="World\Exchanges\NpcExchange.cs" />
+    <Compile Include="World\Exchanges\PlayerExchange.cs" />
+    <Compile Include="World\Exchanges\ShopNpcExchange.cs" />
+    <Compile Include="World\Exchanges\TaxCollectorExchange.cs" />
+    <Compile Include="World\Fights\AI\AIAction.cs" />
+    <Compile Include="World\Fights\AI\AttackAction.cs" />
+    <Compile Include="World\Fights\AI\BuffAllyAction.cs" />
+    <Compile Include="World\Fights\AI\BuffHimselfAction.cs" />
+    <Compile Include="World\Fights\AI\DebuffAllyAction.cs" />
+    <Compile Include="World\Fights\AI\DebuffEnnemyAction.cs" />
+    <Compile Include="World\Fights\AI\HealAllyAction.cs" />
+    <Compile Include="World\Fights\AI\HealHimselfAction.cs" />
+    <Compile Include="World\Fights\AI\InvokAction.cs" />
+    <Compile Include="World\Fights\AI\MadAction.cs" />
+    <Compile Include="World\Fights\AI\RepelsAction.cs" />
+    <Compile Include="World\Fights\AI\SelfActingAction.cs" />
+    <Compile Include="World\Fights\AI\SubBuffAction.cs" />
+    <Compile Include="World\Fights\AI\SupportAction.cs" />
+    <Compile Include="World\Fights\Effects\EffectAlterJet.cs" />
+    <Compile Include="World\Fights\Effects\EffectBlyphe.cs" />
+    <Compile Include="World\Fights\Effects\EffectInvocationStatic.cs" />
+    <Compile Include="World\Fights\Fighters\PrismFighter.cs" />
+    <Compile Include="World\Fights\Fighters\StaticMonster.cs" />
+    <Compile Include="World\Fights\FightListener.cs" />
+    <Compile Include="World\Fights\Layers\FightBlypheLayer.cs" />
+    <Compile Include="World\Fights\Layers\FightGlypheLayer.cs" />
+    <Compile Include="World\Fights\FightObjects\FightGroundLayer.cs" />
+    <Compile Include="World\Fights\Layers\FightTrapLayer.cs" />
+    <Compile Include="World\Fights\FightObjects\StaticFighter.cs" />
+    <Compile Include="World\Fights\Types\AggressionFight.cs" />
+    <Compile Include="World\Fights\AI\AINeuron.cs" />
+    <Compile Include="World\Fights\AI\AIProcessor.cs" />
+    <Compile Include="World\Fights\Algo.cs" />
+    <Compile Include="World\Fights\Types\ChallengeFight.cs" />
+    <Compile Include="World\Fights\Fighters\CharacterFighter.cs" />
+    <Compile Include="World\Fights\Effects\BuffArmor.cs" />
+    <Compile Include="World\Fights\Effects\BuffChanceEcaflip.cs" />
+    <Compile Include="World\Fights\Effects\BuffChatiment.cs" />
+    <Compile Include="World\Fights\Effects\BuffDamage.cs" />
+    <Compile Include="World\Fights\Effects\BuffDamageDropLife.cs" />
+    <Compile Include="World\Fights\Effects\BuffDamagePerPA.cs" />
+    <Compile Include="World\Fights\Effects\BuffDerobade.cs" />
+    <Compile Include="World\Fights\Effects\BuffEffect.cs" />
+    <Compile Include="World\Fights\Effects\BuffHeal.cs" />
+    <Compile Include="World\Fights\Effects\BuffIncreaseSpellJetDamage.cs" />
+    <Compile Include="World\Fights\Effects\BuffLifeDamage.cs" />
+    <Compile Include="World\Fights\Effects\BuffPorter.cs" />
+    <Compile Include="World\Fights\Effects\BuffPorteur.cs" />
+    <Compile Include="World\Fights\Effects\BuffReflectSpell.cs" />
+    <Compile Include="World\Fights\Effects\BuffSacrifice.cs" />
+    <Compile Include="World\Fights\Effects\BuffSkin.cs" />
+    <Compile Include="World\Fights\Effects\BuffState.cs" />
+    <Compile Include="World\Fights\Effects\BuffStats.cs" />
+    <Compile Include="World\Fights\Effects\BuffSubPAEsquive.cs" />
+    <Compile Include="World\Fights\Effects\BuffSubPMEsquive.cs" />
+    <Compile Include="World\Fights\Effects\EffectAddState.cs" />
+    <Compile Include="World\Fights\Effects\EffectArmor.cs" />
+    <Compile Include="World\Fights\Effects\EffectBase.cs" />
+    <Compile Include="World\Fights\Effects\EffectCast.cs" />
+    <Compile Include="World\Fights\Effects\EffectChanceEcaflip.cs" />
+    <Compile Include="World\Fights\Effects\EffectChatiment.cs" />
+    <Compile Include="World\Fights\Effects\EffectDamage.cs" />
+    <Compile Include="World\Fights\Effects\EffectDamageDropLife.cs" />
+    <Compile Include="World\Fights\Effects\EffectDamageLanceur.cs" />
+    <Compile Include="World\Fights\Effects\EffectDamagePerPA.cs" />
+    <Compile Include="World\Fights\Effects\EffectDebuff.cs" />
+    <Compile Include="World\Fights\Effects\EffectDerobade.cs" />
+    <Compile Include="World\Fights\Effects\EffectDieFighter.cs" />
+    <Compile Include="World\Fights\Effects\EffectGlyphe.cs" />
+    <Compile Include="World\Fights\Effects\EffectHeal.cs" />
+    <Compile Include="World\Fights\Effects\EffectIncreaseSpellJetDamage.cs" />
+    <Compile Include="World\Fights\Effects\EffectInvocation.cs" />
+    <Compile Include="World\Fights\Effects\EffectInvocationDouble.cs" />
+    <Compile Include="World\Fights\Effects\EffectLancer.cs" />
+    <Compile Include="World\Fights\Effects\EffectLifeDamage.cs" />
+    <Compile Include="World\Fights\Effects\EffectLifeSteal.cs" />
+    <Compile Include="World\Fights\Effects\EffectLostState.cs" />
+    <Compile Include="World\Fights\Effects\EffectPorter.cs" />
+    <Compile Include="World\Fights\Effects\EffectPushBack.cs" />
+    <Compile Include="World\Fights\Effects\EffectPushFear.cs" />
+    <Compile Include="World\Fights\Effects\EffectReflectSpell.cs" />
+    <Compile Include="World\Fights\Effects\EffectSacrifice.cs" />
+    <Compile Include="World\Fights\Effects\EffectSkin.cs" />
+    <Compile Include="World\Fights\Effects\EffectState.cs" />
+    <Compile Include="World\Fights\Effects\EffectStats.cs" />
+    <Compile Include="World\Fights\Effects\EffectStatsSteal.cs" />
+    <Compile Include="World\Fights\Effects\EffectSubPAEsquive.cs" />
+    <Compile Include="World\Fights\Effects\EffectSubPMEsquive.cs" />
+    <Compile Include="World\Fights\Effects\EffectTeleport.cs" />
+    <Compile Include="World\Fights\Effects\EffectTranspose.cs" />
+    <Compile Include="World\Fights\Effects\EffectTrap.cs" />
+    <Compile Include="World\Fights\Effects\EffectUnHide.cs" />
+    <Compile Include="World\Fights\Exceptions\FighterException.cs" />
+    <Compile Include="World\Fights\Exceptions\FightException.cs" />
+    <Compile Include="World\Fights\Exceptions\StopAIException.cs" />
+    <Compile Include="World\Fights\Fight.cs" />
+    <Compile Include="World\Fights\FightCell.cs" />
+    <Compile Include="World\Fights\FightController.cs" />
+    <Compile Include="World\Fights\FightObjects\Fighter.cs" />
+    <Compile Include="World\Fights\FighterBuff.cs" />
+    <Compile Include="World\Fights\Fighters\DoubleFighter.cs" />
+    <Compile Include="World\Fights\FighterSpell.cs" />
+    <Compile Include="World\Fights\FighterState.cs" />
+    <Compile Include="World\Fights\FightTeam.cs" />
+    <Compile Include="World\Fights\FightTimer.cs" />
+    <Compile Include="World\Fights\FightWorker.cs" />
+    <Compile Include="World\Fights\GameFightEndResult.cs" />
+    <Compile Include="World\Fights\IFightObject.cs" />
+    <Compile Include="World\Fights\Types\KolizeumFight.cs" />
+    <Compile Include="World\Fights\Types\MonsterFight.cs" />
+    <Compile Include="World\Fights\Fighters\MonsterFighter.cs" />
+    <Compile Include="World\Fights\Types\PercepteurFight.cs" />
+    <Compile Include="World\Fights\Fighters\PercepteurFighter.cs" />
+    <Compile Include="World\Fights\Fighters\VirtualFighter.cs" />
+    <Compile Include="World\Fights\Types\PrismFight.cs" />
+    <Compile Include="World\GameActions.cs" />
+    <Compile Include="World\GameActions\GameCellAction.cs" />
+    <Compile Include="World\GameActions\GameCreateGuild.cs" />
+    <Compile Include="World\GameActions\GameDialog.cs" />
+    <Compile Include="World\GameActions\GameExchange.cs" />
+    <Compile Include="World\GameActions\GameFight.cs" />
+    <Compile Include="World\GameActions\GameFightCastSpell.cs" />
+    <Compile Include="World\GameActions\GameFightSpectator.cs" />
+    <Compile Include="World\GameActions\GameKolizeum.cs" />
+    <Compile Include="World\GameActions\GameMapMovement.cs" />
+    <Compile Include="World\GameActions\GameParty.cs" />
+    <Compile Include="World\GameActions\GameRequest.cs" />
+    <Compile Include="World\GameRequests\ChallengeFightRequest.cs" />
+    <Compile Include="World\GameRequests\ExchangeRequest.cs" />
+    <Compile Include="World\GameRequests\GameBaseRequest.cs" />
+    <Compile Include="World\GameRequests\GuildJoinRequest.cs" />
+    <Compile Include="World\GameRequests\PartyRequest.cs" />
+    <Compile Include="World\Kolizeum\KolizeumManager.cs" />
+    <Compile Include="World\Kolizeum\StartFightTask.cs" />
+    <Compile Include="World\Maps\CellAction.cs" />
+    <Compile Include="World\Maps\CellHelper.cs" />
+    <Compile Include="World\Maps\CellZone.cs" />
+    <Compile Include="World\Maps\DofusCell.cs" />
+    <Compile Include="World\Maps\IGameActor.cs" />
+    <Compile Include="World\Maps\IObject.cs" />
+    <Compile Include="World\Maps\MapCrypter.cs" />
+    <Compile Include="World\Maps\MonsterGroup.cs" />
+    <Compile Include="World\Maps\MovementPath.cs" />
+    <Compile Include="World\Maps\Npc.cs" />
+    <Compile Include="World\Maps\Pathfinder.cs" />
+    <Compile Include="World\Maps\Pathfinding.cs" />
+    <Compile Include="World\Maps\Pathmaker.cs" />
+    <Compile Include="World\Packets\AccountQueuPacket.cs" />
+    <Compile Include="World\Packets\AccountStatsMessage.cs" />
+    <Compile Include="World\Packets\AccountTicketErrorMessage.cs" />
+    <Compile Include="World\Packets\AccountTicketSuccessMessage.cs" />
+    <Compile Include="World\Packets\AreaAlignMessage.cs" />
+    <Compile Include="World\Packets\BankAddItemMessage.cs" />
+    <Compile Include="World\Packets\BasicDateMessage.cs" />
+    <Compile Include="World\Packets\BasicNoOperationMessage.cs" />
+    <Compile Include="World\Packets\BasicReferenceTimeMessage .cs" />
+    <Compile Include="World\Packets\CharacterAlignementLose.cs" />
+    <Compile Include="World\Packets\CharacterCreationFailMessage.cs" />
+    <Compile Include="World\Packets\CharacterCreationSuccessMessage.cs" />
+    <Compile Include="World\Packets\CharacterDeleteFlagMessage.cs" />
+    <Compile Include="World\Packets\CharacterDeletionFailMessage.cs" />
+    <Compile Include="World\Packets\CharacterEnnemyAddMessage.cs" />
+    <Compile Include="World\Packets\CharacterEnnemyDeleteMessage.cs" />
+    <Compile Include="World\Packets\CharacterEnnemyListMessage.cs" />
+    <Compile Include="World\Packets\CharacterFighterMount.cs" />
+    <Compile Include="World\Packets\CharacterFlagMessage.cs" />
+    <Compile Include="World\Packets\CharacterForgetSpellInterface.cs" />
+    <Compile Include="World\Packets\CharacterFriendAddMessage.cs" />
+    <Compile Include="World\Packets\CharacterFriendDeleteMessage.cs" />
+    <Compile Include="World\Packets\CharacterFriendListMessage.cs" />
+    <Compile Include="World\Packets\CharacterMountXpGive.cs" />
+    <Compile Include="World\Packets\CharacterNameAlreadyExistMessage.cs" />
+    <Compile Include="World\Packets\CharacterNewLevelMessage.cs" />
+    <Compile Include="World\Packets\CharacterOldEnnemyAddMessage.cs" />
+    <Compile Include="World\Packets\CharacterRandomName.cs" />
+    <Compile Include="World\Packets\CharacterRideEventMessage.cs" />
+    <Compile Include="World\Packets\CharacterRightMessage.cs" />
+    <Compile Include="World\Packets\CharacterSeeFriendConnection.cs" />
+    <Compile Include="World\Packets\CharacterSelectedInformationsMessage.cs" />
+    <Compile Include="World\Packets\CharacterSelectionFailMessage.cs" />
+    <Compile Include="World\Packets\CharactersListMessage.cs" />
+    <Compile Include="World\Packets\CharacterSlotFullMessage.cs" />
+    <Compile Include="World\Packets\CharacterRideMessage.cs" />
+    <Compile Include="World\Packets\ChatChannelEnabledMessage.cs" />
+    <Compile Include="World\Packets\ChatChannelErrorEnum.cs" />
+    <Compile Include="World\Packets\ChatChannelMessage.cs" />
+    <Compile Include="World\Packets\ChatGameMessage.cs" />
+    <Compile Include="World\Packets\ConquestBalanceMessage.cs" />
+    <Compile Include="World\Packets\ConquestBonusMessage.cs" />
+    <Compile Include="World\Packets\ConquestClosePanelMessage.cs" />
+    <Compile Include="World\Packets\ConquestGepositionInfosMessage.cs" />
+    <Compile Include="World\Packets\ConquestInfoJoinPrismMessage.cs" />
+    <Compile Include="World\Packets\ConquestPrismDiedMessage.cs" />
+    <Compile Include="World\Packets\ConquestPrismeAttackmessage.cs" />
+    <Compile Include="World\Packets\ConquestPrismSurvivedMessage.cs" />
+    <Compile Include="World\Packets\ConsoleMessage.cs" />
+    <Compile Include="World\Packets\EmptyMessage.cs" />
+    <Compile Include="World\Packets\EnnemyDeleteOkMessage.cs" />
+    <Compile Include="World\Packets\ExchangeBankListMessage.cs" />
+    <Compile Include="World\Packets\ExchangeBidHouseFailJoinLine.cs" />
+    <Compile Include="World\Packets\ExchangeBidHouseItemsList.cs" />
+    <Compile Include="World\Packets\ExchangeBuyFailMessage.cs" />
+    <Compile Include="World\Packets\ExchangeBuySuccessMessage.cs" />
+    <Compile Include="World\Packets\ExchangeCreateMessage.cs" />
+    <Compile Include="World\Packets\ExchangeEndMessage.cs" />
+    <Compile Include="World\Packets\ExchangeItemListMessage.cs" />
+    <Compile Include="World\Packets\ExchangeItemListMessagePerAccount.cs" />
+    <Compile Include="World\Packets\ExchangeLeaveMessage.cs" />
+    <Compile Include="World\Packets\ExchangeLineBidHouseItemLine.cs" />
+    <Compile Include="World\Packets\ExchangeMountItemListMessage.cs" />
+    <Compile Include="World\Packets\ExchangeMoveDistantObject.cs" />
+    <Compile Include="World\Packets\ExchangeMoveKamasMessage.cs" />
+    <Compile Include="World\Packets\ExchangeMoveSucessMessage.cs" />
+    <Compile Include="World\Packets\ExchangeRequestMessage.cs" />
+    <Compile Include="World\Packets\ExchangeShopItemListMessage.cs" />
+    <Compile Include="World\Packets\ExchangeTaxItemListMessage.cs" />
+    <Compile Include="World\Packets\ExchangeValidateMessage.cs" />
+    <Compile Include="World\Packets\FightAddGroundLayerMessage.cs" />
+    <Compile Include="World\Packets\FightChallengeFail.cs" />
+    <Compile Include="World\Packets\FightChallengeOk.cs" />
+    <Compile Include="World\Packets\FightDetailInformationMessage.cs" />
+    <Compile Include="World\Packets\FightGameActionMessage.cs" />
+    <Compile Include="World\Packets\FightListMessage.cs" />
+    <Compile Include="World\Packets\FightRemoveGroundLayerMessage.cs" />
+    <Compile Include="World\Packets\FightShowCell.cs" />
+    <Compile Include="World\Packets\FightShowChallenge.cs" />
+    <Compile Include="World\Packets\FmCMessage.cs" />
+    <Compile Include="World\Packets\FmMoveMessage.cs" />
+    <Compile Include="World\Packets\GameActionEnvironementMessage.cs" />
+    <Compile Include="World\Packets\GameActionFightMessage.cs" />
+    <Compile Include="World\Packets\GameActionFinishMessage.cs" />
+    <Compile Include="World\Packets\GameActionMessage.cs" />
+    <Compile Include="World\Packets\GameActionSceneMessage.cs" />
+    <Compile Include="World\Packets\GameActionStartMessage.cs" />
+    <Compile Include="World\Packets\GameActorDestroyMessage.cs" />
+    <Compile Include="World\Packets\GameActorShowMessage.cs" />
+    <Compile Include="World\Packets\GameCreateMessage.cs" />
+    <Compile Include="World\Packets\GameDataCellReset.cs" />
+    <Compile Include="World\Packets\GameDataCellSetTrap.cs" />
+    <Compile Include="World\Packets\GameDataOkMessage.cs" />
+    <Compile Include="World\Packets\GameEffectInformationsMessage.cs" />
+    <Compile Include="World\Packets\GameFightEndMessage.cs" />
+    <Compile Include="World\Packets\GameFightFlagDestroyMessage.cs" />
+    <Compile Include="World\Packets\GameFightFlagDisplayMessage.cs" />
+    <Compile Include="World\Packets\GameFightOptionMessage.cs" />
+    <Compile Include="World\Packets\GameFightTeamFlagFightersMessage.cs" />
+    <Compile Include="World\Packets\GameInformationCoordinateMessage.cs" />
+    <Compile Include="World\Packets\GameJoinMessage.cs" />
+    <Compile Include="World\Packets\GameLeaveMessage.cs" />
+    <Compile Include="World\Packets\GameMapComplementaryInformationsMessage.cs" />
+    <Compile Include="World\Packets\GameMapObjectMessage.cs" />
+    <Compile Include="World\Packets\GamePlaceMessage.cs" />
+    <Compile Include="World\Packets\GamePrismMenuMessage.cs" />
+    <Compile Include="World\Packets\GameReadyMessage.cs" />
+    <Compile Include="World\Packets\GameRideMessage.cs" />
+    <Compile Include="World\Packets\GameStartMessage.cs" />
+    <Compile Include="World\Packets\GameTurnFinishMessage.cs" />
+    <Compile Include="World\Packets\GameTurnListMessage.cs" />
+    <Compile Include="World\Packets\GameTurnMiddleMessage.cs" />
+    <Compile Include="World\Packets\GameTurnReadyMessage.cs" />
+    <Compile Include="World\Packets\GameTurnStartMessage.cs" />
+    <Compile Include="World\Packets\GameZaapMessage.cs" />
+    <Compile Include="World\Packets\GroupInvitationError.cs" />
+    <Compile Include="World\Packets\GuildAddMemberInformationMessage.cs" />
+    <Compile Include="World\Packets\GuildAttackedTaxcollector.cs" />
+    <Compile Include="World\Packets\GuildBasicInformationMessage.cs" />
+    <Compile Include="World\Packets\GuildCreateMessage.cs" />
+    <Compile Include="World\Packets\GuildCreationLeaveMessage.cs" />
+    <Compile Include="World\Packets\GuildFightInformationsMesssage.cs" />
+    <Compile Include="World\Packets\GuildGeneralBoostInformations.cs" />
+    <Compile Include="World\Packets\GuildGeneralInfos.cs" />
+    <Compile Include="World\Packets\GuildInformationsAttackMessage.cs" />
+    <Compile Include="World\Packets\GuildJoinMessage.cs" />
+    <Compile Include="World\Packets\GuildKickMessage.cs" />
+    <Compile Include="World\Packets\GuildMountParkInformationMessage.cs" />
+    <Compile Include="World\Packets\GuildNewCreationMessage.cs" />
+    <Compile Include="World\Packets\GuildSettingInformationMessage .cs" />
+    <Compile Include="World\Packets\GuildTaxCollectorMessage.cs" />
+    <Compile Include="World\Packets\HelloGameMessage.cs" />
+    <Compile Include="World\Packets\ImMessage.cs" />
+    <Compile Include="World\Packets\InconnuHelpMessage.cs" />
+    <Compile Include="World\Packets\InventoryWeightMessage.cs" />
+    <Compile Include="World\Packets\ItemSetAppearMessage.cs" />
+    <Compile Include="World\Packets\MapAnimOffFightMessage.cs" />
+    <Compile Include="World\Packets\MapDataMessage.cs" />
+    <Compile Include="World\Packets\MapDirectionChanged.cs" />
+    <Compile Include="World\Packets\MapEatOrDrinkMessage.cs" />
+    <Compile Include="World\Packets\MapEmoticoneMessage.cs" />
+    <Compile Include="World\Packets\MapEnvironementEmoticoneMessage.cs" />
+    <Compile Include="World\Packets\MapFightCountMessage.cs" />
+    <Compile Include="World\Packets\MapGameActionMessage.cs" />
+    <Compile Include="World\Packets\MapMountParkMessage.cs" />
+    <Compile Include="World\Packets\MapObjectMessage.cs" />
+    <Compile Include="World\Packets\MountActualPodMessage.cs" />
+    <Compile Include="World\Packets\MountDescriptionMessage.cs" />
+    <Compile Include="World\Packets\MountNameChangeMessage.cs" />
+    <Compile Include="World\Packets\MountXpMessage.cs" />
+    <Compile Include="World\Packets\NpcDialogQuestionMessage.cs" />
+    <Compile Include="World\Packets\NpcDialogStartMessage.cs" />
+    <Compile Include="World\Packets\NpcEndDialogMessage.cs" />
+    <Compile Include="World\Packets\ObjectActualiseMessage.cs" />
+    <Compile Include="World\Packets\ObjectAddInventoryMessage.cs" />
+    <Compile Include="World\Packets\ObjectHdvPriceMessage.cs" />
+    <Compile Include="World\Packets\ObjectMoveFailMessage.cs" />
+    <Compile Include="World\Packets\ObjectMoveSucessMessage.cs" />
+    <Compile Include="World\Packets\ObjectQuantityMessage.cs" />
+    <Compile Include="World\Packets\ObjectRefreshMessage.cs" />
+    <Compile Include="World\Packets\ObjectRemoveMessage.cs" />
+    <Compile Include="World\Packets\ObjectSellFailMessage.cs" />
+    <Compile Include="World\Packets\ObjectTaskMessage.cs" />
+    <Compile Include="World\Packets\PartyAllGroupMember.cs" />
+    <Compile Include="World\Packets\PartyCreatedMesssage.cs" />
+    <Compile Include="World\Packets\PartyErrorMessage.cs" />
+    <Compile Include="World\Packets\PartyFlagMessage.cs" />
+    <Compile Include="World\Packets\PartyLeaveMessage.cs" />
+    <Compile Include="World\Packets\PartyListMessage.cs" />
+    <Compile Include="World\Packets\PartyPlayerAddedMessage.cs" />
+    <Compile Include="World\Packets\PartyRefuseMessage.cs" />
+    <Compile Include="World\Packets\PartyRemovePlayer.cs" />
+    <Compile Include="World\Packets\PartyRequestMessage.cs" />
+    <Compile Include="World\Packets\PingPacket.cs" />
+    <Compile Include="World\Packets\PlayerAlignementUpdateMessage.cs" />
+    <Compile Include="World\Packets\PlayerZaapiMessage.cs" />
+    <Compile Include="World\Packets\PlayerZaapiValideMessage.cs" />
+    <Compile Include="World\Packets\PrismeMenuCloseMessage.cs" />
+    <Compile Include="World\Packets\PrismInformationsAttackMessage.cs" />
+    <Compile Include="World\Packets\PrismInformationsDefenseMessage.cs" />
+    <Compile Include="World\Packets\SpecialisationSetMessage.cs" />
+    <Compile Include="World\Packets\SpellsListMessage.cs" />
+    <Compile Include="World\Packets\SpellUpdateFailMessage.cs" />
+    <Compile Include="World\Packets\SpellUpdateSuccessMessage.cs" />
+    <Compile Include="World\Packets\SubAreaAlignMessage.cs" />
+    <Compile Include="World\Packets\SubAreaListMessage.cs" />
+    <Compile Include="World\Packets\TextInformationMessage.cs" />
+    <Compile Include="World\Packets\UnknowAV0Message.cs" />
+    <Compile Include="World\Packets\WayPointUseMessage.cs" />
+    <Compile Include="World\Packets\WayPointValideMessage.cs" />
+    <Compile Include="World\Packets\ZaapiValideMessage.cs" />
+    <Compile Include="World\Scripting\Commands\CommandParameters.cs" />
+    <Compile Include="World\Scripting\Commands\JSAdminCommand.cs" />
+    <Compile Include="World\Scripting\Commands\JSAdminCommandPackage.cs" />
+    <Compile Include="World\Scripting\Commands\JSPlayerCommand.cs" />
+    <Compile Include="World\Scripting\Commands\JSPlayerCommandPackage.cs" />
+    <Compile Include="World\Scripting\Fights\JSIAMind.cs" />
+    <Compile Include="World\Scripting\Fights\JSIAMindPackage.cs" />
+    <Compile Include="World\Scripting\JSKernel.cs" />
+    <Compile Include="World\Scripting\Maps\JSCellAction.cs" />
+    <Compile Include="World\Scripting\Maps\JSCellActionsPackage.cs" />
+    <Compile Include="World\Scripting\ScriptKernel.cs" />
+    <Compile Include="World\Scripting\TeraScript.cs" />
+    <Compile Include="World\Spells\EffectInfos.cs" />
+    <Compile Include="World\Spells\SpellLevel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tera.Libs\Tera.Libs.csproj">
+      <Project>{59C69024-AC61-4277-B15E-A2DD596942B7}</Project>
+      <Name>Tera.Libs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

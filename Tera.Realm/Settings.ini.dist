@@ -1,0 +1,16 @@
+[Login]
+Host = 192.168.0.40
+Port = 444
+
+[Inter]
+Host = 127.0.0.1
+Port = 666
+
+[Database]
+Host = 127.0.0.1
+Username = root
+Password = 
+Name = tera
+
+[Logging]
+Debug = true

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59C69024-AC61-4277-B15E-A2DD596942B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tera.Libs</RootNamespace>
+    <AssemblyName>Tera.Libs</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jint">
+      <HintPath>.\Jint.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Tera.Realm\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\MySqlProvider.cs" />
+    <Compile Include="Enumerations\ActionTypeEnum.cs" />
+    <Compile Include="Enumerations\AlignmentTypeEnum.cs" />
+    <Compile Include="Enumerations\ChatChannelEnum.cs" />
+    <Compile Include="Enumerations\ChatTiming.cs" />
+    <Compile Include="Enumerations\ClassEnum.cs" />
+    <Compile Include="Enumerations\ConsoleColorEnum.cs" />
+    <Compile Include="Enumerations\Definitions.cs" />
+    <Compile Include="Enumerations\EffectEnum.cs" />
+    <Compile Include="Enumerations\GuildGradeEnum.cs" />
+    <Compile Include="Enumerations\GuildRightEnum.cs" />
+    <Compile Include="Enumerations\IAMindEnum.cs" />
+    <Compile Include="Enumerations\IObjectEnum.cs" />
+    <Compile Include="Enumerations\ItemSlotEnum.cs" />
+    <Compile Include="Enumerations\ItemTypeEnum.cs" />
+    <Compile Include="Enumerations\MiniGameActionEnum.cs" />
+    <Compile Include="Enumerations\PacketHeaderEnum.cs" />
+    <Compile Include="Enumerations\RealmState.cs" />
+    <Compile Include="Enumerations\RestrictionEnum.cs" />
+    <Compile Include="Enumerations\ServerStateEnum.cs" />
+    <Compile Include="Enumerations\EffectTypeEnum.cs" />
+    <Compile Include="Enumerations\StatsTypeEnum.cs" />
+    <Compile Include="Enumerations\TextInformationTypeEnum.cs" />
+    <Compile Include="Enumerations\TurnTimeEnum.cs" />
+    <Compile Include="Enumerations\WorldState.cs" />
+    <Compile Include="Helper\AdressHelper.cs" />
+    <Compile Include="Helper\CachedString.cs" />
+    <Compile Include="Helper\IntHelper.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
+    <Compile Include="IO\IniSettings.cs" />
+    <Compile Include="JS\JSClass.cs" />
+    <Compile Include="JS\JSFile.cs" />
+    <Compile Include="JS\JSPackage.cs" />
+    <Compile Include="JS\JSFunction.cs" />
+    <Compile Include="JS\JSMacro.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Network\Delayer.cs" />
+    <Compile Include="Network\NeoString.cs" />
+    <Compile Include="Network\PacketBase.cs" />
+    <Compile Include="Network\TeraCrypt.cs" />
+    <Compile Include="Network\TeraPacket.cs" />
+    <Compile Include="Packets\HelloKeyMessagePacket.cs" />
+    <Compile Include="Packets\KickPlayerMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Base64.cs" />
+    <Compile Include="Utils\CDateTimeUtil .cs" />
+    <Compile Include="Utils\Couple.cs" />
+    <Compile Include="Utils\Tree.cs" />
+    <Compile Include="Utils\TypesManager.cs" />
+    <Compile Include="VirtualMemory\GarbageCollector.cs" />
+    <Compile Include="VirtualMemory\MemoryObject.cs" />
+    <Compile Include="VirtualMemory\MemoryObjectCollection.cs" />
+    <Compile Include="VirtualMemory\MemoryObjectState.cs" />
+    <Compile Include="VirtualMemory\PointerState.cs" />
+    <Compile Include="VirtualMemory\Pointer.cs" />
+    <Compile Include="XML\XMLCollection.cs" />
+    <Compile Include="XML\XMLEntity.cs" />
+    <Compile Include="XML\XMLTable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
